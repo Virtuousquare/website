@@ -1,0 +1,13 @@
+// TRANSITION
+:root {
+	--gutter: 2rem;
+
+    @include media('>=md') {
+        --gutter: min(4.16vw,8rem);
+    }
+}
+
+
+$ease-out: cubic-bezier(0.000, 0.430, 0.310, 0.975);
+$ease-in-out: cubic-bezier(0.770, 0.010, 0.295, 1.000);
+// https://cubic-bezier.com/

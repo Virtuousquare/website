@@ -1,0 +1,28 @@
+// anim
+// Les variables peuvent être éditées dans le CSS .block {--anim-speed:1s;} ou se déclarer dans une balise HTML style="--anim-speed:1s;"
+// Par défaut (variables.scss)
+// --anim-speed: .7s;
+// --anim-speed-back: .3s;
+// --anim-delay: 0s;
+// --anim-delay-back: 0s;
+// --anim-ease: ease-out;
+// --anim-ease-back: ease-in;
+
+.alive {
+    @include transition(all var(--anim-speed) var(--anim-ease));
+    @include transition-delay(var(--anim-delay));
+
+    &.zoomIn { @include transform-origin(50% 0) }
+
+    &:not(.fire) {
+        &.zoomIn         { @include scale(.9) }
+        &.fadeToBottom   { @include translate(0,-50px); opacity: 0 }
+        &.fadeToTop      { @include translate(0,50px); opacity: 0 }
+        &.fade           { opacity: 0 }
+
+        // FORCER LA VITESSE DE RETOUR A L'ETAT NON VISIBLE
+        @include transition-duration(var(--anim-speed-back));
+        @include transition-delay(var(--anim-delay-back));
+        @include transition-timing-function(var(--anim-ease-back));
+    }
+}

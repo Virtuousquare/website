@@ -1,0 +1,106 @@
+/*
+<a href="https://youtu.be/..." class="tpx_video-btn" data-target="[id du bloc ciblé]" target="_blank">Vidéo</a>
+*/
+
+.tpx_overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,.9);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-show {
+        pointer-events: initial;
+        visibility: visible;
+    }
+
+    &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        @include transition(all .3s $ease-in-out);
+        text-indent: -999em;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 5px;
+            background-color: #fff;
+        }
+
+        &:before {
+            @include transform(translate(-50%,-50%) rotate(-45deg));
+        }
+
+        &:after {
+            @include transform(translate(-50%,-50%) rotate(45deg));
+        }
+
+        &:hover,
+        &:focus {
+            @include rotate(90deg);
+        }
+    }
+
+    &-video {
+        max-width: 90%;
+        max-height: calc(100% - 80px);
+        display: none;
+
+        &[data-show] {
+            display: block;
+        }
+    }
+}
+
+
+.tpx_vimeo {
+    position: relative;
+    background: #eee;
+    aspect-ratio: 16/9;
+    max-width: 500px;
+
+    &:not(.video_loaded) {
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 5px solid #000;
+            border-bottom-color: #fff;
+            @include transform(translate(-50%,-50%) rotate(0));
+            @include animation(videoSpin 1s linear infinite);
+            @include keyframes(videoSpin) {
+                to {
+                    @include transform(translate(-50%,-50%) rotate(360deg));
+                }
+            }
+        }
+    }
+
+    iframe {
+        position: relative;
+    }
+}
+
+iframe {
+    display: block;
+}

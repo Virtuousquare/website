@@ -1,0 +1,32 @@
+// APPEL DES MIXINS DANS LES SCSS
+// @include general_min-md() {
+//      ...
+// }
+
+
+// DANS LES SCSS
+// @mixin general_min-md() {
+//      ...
+// }
+
+
+@include media('<md') {
+
+    @include cv_max-md();
+}
+
+
+@include media('>=md') {
+
+    body {
+        font-size: 1.8rem;
+        line-height: 1.5em;
+    }
+    @include general_min-md();
+    @include cv_min-md();
+}
+
+@include media('>=lg') {
+
+    @include cv_min-lg();
+}
