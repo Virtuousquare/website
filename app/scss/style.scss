@@ -3,35 +3,16 @@
 @import "global/variables";
 @import "global/mixin";
 
-::selection {
-	background-color: #000;
-	color: #fff;
-}
-
-::-moz-selection {
-	background-color: #000;
-	color: #fff;
-}
-
-html {
-	font-size: 0.625em;
-}
-
-body {
-	margin: 0;
-	font-family: 'Inter',sans-serif;
-	font-size: 1.6rem;
-	line-height: 1.5em;
-}
-
+// GLOBAL
 @import "global/tpx";
 @import "global/general";
-
-// GLOBAL
 @import "global/animation"; 
 
 // STRUCTURE
-@import "structure/cv";
+@import "structure/header";
+@import "structure/home";
+@import "structure/hero";
+@import "structure/footer";
 
 // QUERIES
 @import "queries/queries"; 

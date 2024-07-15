@@ -12,21 +12,33 @@
 
 @include media('<md') {
 
-    @include cv_max-md();
+}
+
+
+@include media('<sm') {
+
+    @include header_max-sm();
+}
+
+
+@include media('>=xs') {
+
+    @include home_min-xs();
+}
+
+
+@include media('>=sm') {
+
+    @include header_min-sm();
 }
 
 
 @include media('>=md') {
 
-    body {
-        font-size: 1.8rem;
-        line-height: 1.5em;
-    }
     @include general_min-md();
-    @include cv_min-md();
+    @include home_min-md();
 }
 
 @include media('>=lg') {
 
-    @include cv_min-lg();
 }

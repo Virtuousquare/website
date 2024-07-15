@@ -1,55 +1,122 @@
 // GENERAL
-.xp_refs a {
-    color: #000;
-    padding: 0 .2em;
-    text-decoration: none;
-    box-shadow: lightblue 0 -.3em 0 inset;
-    @include transition(all .1s $ease-in-out);
+::selection {
+	background-color: $primary;
+	color: #fff;
+}
 
-    &:hover {
-        box-shadow: lightblue 0 -1.2em 0 inset;
+::-moz-selection {
+	background-color: $primary;
+	color: #fff;
+}
+
+html {
+	font-size: 0.625em;
+}
+
+body {
+    background-color: $light;
+    color: $dark;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6em;
+}
+
+a {
+    color: $dark;
+    text-underline-offset: .12em;
+
+    &:focus {
+        outline: 3px dashed $primary;
+        outline-offset: 5px;
     }
 }
 
+.link {
+    font-weight: 700;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+// TITLES
 .title {
 
-    &_h1 {
-        font-size: 4rem;
-        margin: 0 0 .2em;
-        line-height: 1.2em;
-        max-width: 50rem;
-    }
-
     &_h2 {
-        text-transform: uppercase;
-        margin-top: 6rem;
-        line-height: 1.3em;
+        font-weight: 400;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3.5rem;
+        line-height: 1.2em;
+        margin: .5em 0;
+    }
+}
 
-        &:after {
-            content: '';
-            display: block;
-            margin: .8em 0 1.3em;
-            width: 5rem;
-            height: 2px;
-            background-color: #000;
-        }
+
+.text_center {
+    text-align: center;
+}
+
+
+// LAYOUT
+.container {
+
+    &_main,
+    &_text  {
+        margin: 0 auto;
     }
 
-    &_h3 {
-        margin-top: 0;
-        margin-bottom: .3em;
-        line-height: 1.3em;
+    &_main {
+        max-width: 132rem;
+        padding-left: 20px;
+        padding-right: 20px;
     }
+
+    &_text {
+        max-width: 80rem;
+    }
+}
+
+
+.code {
+    text-align: left;
+    tab-size: 2em;
+    padding: .5rem 2rem;
+    border-left: .4rem solid $primary;
+    overflow-x: auto;
+    font-size: .8em;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $grey;
+        border-radius: 5px;
+    }
+}
+
+
+.tips {
+    background-color: #fff;
+    padding: 2rem min(4.16vw,8rem);
+    border-radius: 2rem;
+    margin: min(4.16vw,8rem);
 }
 
 
 @mixin general_min-md() {
 
-    .title {
+    body {
+        font-size: 2.2rem;
+	    line-height: 1.6em;
+    }
 
-        &_h1 {
+    .title {
+    
+        &_h2 {
             font-size: 6rem;
-            line-height: 1.1em;
+            line-height: 1.2em;
         }
     }
 }

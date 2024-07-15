@@ -7,6 +7,11 @@
     }
 }
 
+$primary: #EF4738;
+$primary-dark: hsl(from $primary h s 50% );
+$grey: #999;
+$dark: #222;
+$light: #eee;
 
 $ease-out: cubic-bezier(0.000, 0.430, 0.310, 0.975);
 $ease-in-out: cubic-bezier(0.770, 0.010, 0.295, 1.000);

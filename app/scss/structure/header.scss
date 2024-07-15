@@ -1,0 +1,158 @@
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: rgba($light,.9);
+    backdrop-filter: blur(3px);
+
+    a {
+        text-decoration: none;
+    }
+
+    &_logo {
+        display: grid;
+        margin: .5em 0;
+    }
+
+    &_name {
+        font-size: 2.4rem;
+        line-height: 1.2em;
+    }
+
+    &_job {
+        color: $grey;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+    }
+
+    &_menu {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+        font-weight: 700;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5em;
+            padding: .3em 0;
+            
+            &:hover {
+                color: $primary;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                min-width: 6px;
+            }
+
+            &:before {
+                height: 6px;
+                border-radius: 50%;
+            }
+
+            &-current {
+
+                &:before {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin header_max-sm() {
+
+    .header {
+
+        &_menu {
+            
+            &-btn {
+                position: relative;
+                aspect-ratio: 1/1;
+                border: 0;
+                text-indent: -999em;
+                padding: 0;
+                cursor: pointer;
+
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 40%;
+                    height: .4rem;
+                    background-color: $dark;
+                }
+
+                &:before {
+                    @include translate(-50%,-.6rem)
+                }
+
+                &:after {
+                    @include translate(-50%,.2rem)
+                }
+
+                &:hover {
+
+                    &:before,
+                    &:after {
+                        background-color: $primary;
+                    }
+                }
+            }
+
+            &-list {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                background-color: $light;
+                z-index: 1;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+@mixin header_min-sm() {
+
+    .header {
+        align-items: center;
+
+        &_name {
+            font-size: 3rem;
+        }
+
+        &_job {
+            font-size: 1.8rem;
+        }
+
+        &_menu {
+
+            &-btn {
+                display: none;
+            }
+
+            &-list {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: flex;
+                gap: 1em;
+            }
+
+            &-link {
+                padding: 0 .2em;
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}

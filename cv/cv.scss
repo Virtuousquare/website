@@ -1,9 +1,40 @@
-.container {
+@import "../app/scss/global/include-media";
+@import "../app/scss/global/breakpoint";
+@import "../app/scss/global/variables";
+@import "../app/scss/global/mixin";
+
+// GLOBAL
+@import "../app/scss/global/tpx";
+
+html {
+	font-size: 0.625em;
+}
+
+
+.cv {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    background-color: #fff;
+    color: #000;
+
+    ::selection {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    ::-moz-selection {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.cv_container {
     padding: var(--gutter);
     margin: 0 auto;
 }
 
-.bg {
+.cv_bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +49,7 @@
 }
 
 
-.header {
+.cv_header {
     display: grid;
     grid-template-areas: 
     "center picture"
@@ -57,7 +88,7 @@
     }
 }
 
-.xp {
+.cv_xp {
 
     &_item {
         margin-top: 4rem;
@@ -88,18 +119,69 @@
     &_agency {
         color:  #999;
     }
+
+    &_refs a {
+        color: #000;
+        padding: 0 .2em;
+        text-decoration: none;
+        box-shadow: lightblue 0 -.3em 0 inset;
+        @include transition(all .1s $ease-in-out);
+    
+        &:hover {
+            box-shadow: lightblue 0 -1.2em 0 inset;
+        }
+    }
 }
 
-@mixin cv_max-md {
+.cv_title {
 
-    .container {
+    &_h1 {
+        font-size: 4rem;
+        margin: 0 0 .2em;
+        line-height: 1.2em;
+        max-width: 50rem;
+    }
+
+    &_h2 {
+        text-transform: uppercase;
+        margin-top: 6rem;
+        line-height: 1.3em;
+
+        &:after {
+            content: '';
+            display: block;
+            margin: .8em 0 1.3em;
+            width: 5rem;
+            height: 2px;
+            background-color: #000;
+        }
+    }
+
+    &_h3 {
+        margin-top: 0;
+        margin-bottom: .3em;
+        line-height: 1.3em;
+    }
+}
+
+@include media('<md') {
+
+    .cv_container {
         max-width: 45rem;
     }
 }
 
-@mixin cv_min-md {
+@include media('>=md') {
 
-    .container {
+    .cv_title {
+
+        &_h1 {
+            font-size: 6rem;
+            line-height: 1.1em;
+        }
+    }
+
+    .cv_container {
         max-width: 120rem;
         display: grid;
         grid-template-areas: 
@@ -108,7 +190,7 @@
         gap: var(--gutter);
     }
 
-    .header {
+    .cv_header {
         display: flex;
         gap: var(--gutter);
         grid-area: header;
@@ -122,11 +204,11 @@
         }
     }
 
-    .xp {
+    .cv_xp {
         grid-area: xp;
     }
 
-    .aside {
+    .cv_aside {
         grid-area: aside;
         max-width: 25rem;
 
@@ -137,9 +219,9 @@
     }
 }
 
-@mixin cv_min-lg {
+@include media('>=lg') {
 
-    .bg {
+    .cv_bg {
         left: 50%;
         margin-left: -60rem;
     }

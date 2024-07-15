@@ -18,6 +18,10 @@ var paths = {
       src: 'app/scss/style.scss',
       dest: 'assets/css/'
     },
+    stylesCV: {
+      src: 'cv/cv.scss',
+      dest: 'cv/'
+    },
     scripts: {
       src: 'app/js/app.js',
       dest: 'assets/js/'
@@ -43,6 +47,13 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 		.pipe(browserSync.stream());
 }
+function stylesCV() {
+    return gulp.src(paths.stylesCV.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(paths.stylesCV.dest))
+		.pipe(browserSync.stream());
+}
 
 
 // ---- Script JS ---------------------------------------------------------------------------------- //
@@ -50,10 +61,10 @@ function styles() {
 // ------------------------------------------------------------------------------------------------- //
 var orderJS = [
     // 'app/js/plugin/noConflict.js',
-    'app/js/plugin/player.js',
+    // 'app/js/plugin/player.js',
     'app/js/plugin/animation.js',
     //'app/js/plugin/slick.min.js',
-    'app/js/plugin/tiny-slider.js',
+    // 'app/js/plugin/tiny-slider.js',
     'app/js/plugin/browsers.js', //Webp
     'app/js/app.js'
 ];
@@ -128,8 +139,8 @@ function browserSyncFunc() {
 
 function watch() {
     gulp.watch("app/scss/**/*.scss", styles);
+    gulp.watch("cv/*.scss", stylesCV);
     gulp.watch("app/js/**/*").on('change', scripts);
-    // gulp.watch("app/img/**/*").on('change', img);
     gulp.watch("*.html").on('change', browserSync.reload);
 }
 
@@ -137,10 +148,11 @@ function watch() {
 // ---- Gulp -------------------------------------------------------------------------------------- //
 // Définition des tâches de Gulp
 // ------------------------------------------------------------------------------------------------ //
-var build = gulp.series(cleanALL, styles, scripts, browserSyncFunc);
+var build = gulp.series(cleanALL, styles, stylesCV, scripts, browserSyncFunc);
 
 exports.cleanALL    = cleanALL;
 exports.styles      = styles;
+exports.styles      = stylesCV;
 exports.build       = build;
 exports.img         = img;
 exports.webpFunc    = webpFunc;

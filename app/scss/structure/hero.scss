@@ -1,0 +1,12 @@
+.hero {
+
+    &_big {
+        display: block;
+        color: $primary;
+        font-family: 'Bebas Neue', sans-serif;
+        text-align: center;
+        font-size: min(25vw,500px);
+        line-height: 1em;
+        // font: 10vw/1em Georgia, serif;
+    }
+}
