@@ -79,12 +79,36 @@ a {
 
 
 .code {
-    text-align: left;
-    tab-size: 2em;
-    padding: .5rem 2rem;
-    border-left: .4rem solid $primary;
+    tab-size: 1.1em;
     overflow-x: auto;
-    font-size: .8em;
+    padding: .5rem 0;
+    line-height: 1.3em;
+
+    // text-decoration-thickness: 1em;
+    // text-decoration-line: line-through;
+
+    &_wrapper {
+        text-align: left;
+        font-size: .8em;
+        padding-left: 1.5rem;
+
+        &[data-type] {
+            position: relative;
+            border-left: .4rem solid $primary;
+    
+            &:before{
+                content: attr(data-type);
+                position: absolute;
+                top: .4rem;
+                right: calc(100% - .8rem);
+                color: $primary;
+                @include transform(rotate(-90deg) translate(-100%,0));
+                @include transform-origin(top left);
+                line-height: 1em;
+                font-weight: 700;
+            }
+        }
+    }
 
     &::-webkit-scrollbar {
         height: 4px;
@@ -94,6 +118,11 @@ a {
         background-color: $grey;
         border-radius: 5px;
     }
+
+    .bg_light {
+        background-color: $light;
+        border-radius: .4rem;
+    }
 }
 
 
@@ -101,7 +130,7 @@ a {
     background-color: #fff;
     padding: 2rem min(4.16vw,8rem);
     border-radius: 2rem;
-    margin: min(4.16vw,8rem);
+    margin: min(4.16vw,8rem) 0;
 }
 
 

@@ -1,0 +1,44 @@
+.projets_previews {
+    display: grid;
+    margin: min(4.16vw,8rem);
+
+    &-item {
+        text-decoration: none;
+        display: grid;
+        padding: 4rem 0;
+        text-align: center;
+        cursor: zoom-in;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    &-infos {
+        color: $grey;
+        font-size: .8em;
+    }
+
+    &-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 400;
+        font-size: 3.5rem;
+        line-height: 1.2em;
+    }
+}
+
+
+@mixin projets_min-md() {
+
+    .projets_previews {
+
+        &-title {
+            font-size: 5rem;
+            line-height: 1.2em;
+        }
+    }
+}

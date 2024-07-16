@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Sébastien Plaignaud - Developpeur front - UI / UX</title>
+	<title>Sébastien Plaignaud - Développeur front - Designer UI / UX</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta charset="UTF-8">
@@ -14,31 +14,14 @@
 </head>
 <body>
 	
-	<div class="container_main">
-
-		<header class="header">
-			<a href="https://virtuousquare.com" class="header_logo">
-				<strong class="header_name">Seb. Plaignaud</strong>
-				<strong class="header_job">Design & Dev. Front</strong>
-			</a>
-			<div class="header_menu">
-				<button class="header_menu-btn">Menu</button>
-				<ul class="header_menu-list">
-					<li><a href="https://virtuousquare.com/portfolio" class="header_menu-link">Portfolio</a></li>
-					<li><a href="https://virtuousquare.com/about" class="header_menu-link">À propos</a></li>
-					<li><a href="https://virtuousquare.com/blog" class="header_menu-link">Blog</a></li>
-					<!-- <li><a href="https://virtuousquare.com/lab" class="header_menu-link">Labo</a></li> -->
-					<li><a class="header_menu-link">Contact</a></li>
-				</ul>
-			</div>
-		</header>
+	<div id="container_general" class="container_main">
 	
-		<div class="page page_home">
+		<div class="page page_home" id="content">
 
 			<section class="hero">
 				<span class="hero_big">Hello&nbsp;!</span>
 				<div class="container_text home_intro">
-					<h1 class="home_intro-item">Je suis Sébastien Plaignaud, designer ui/ux et développeur front depuis 2008.</h1>
+					<h1 class="home_intro-item">Je suis Sébastien Plaignaud, designer ui/ux et développeur front depuis&nbsp;2008.</h1>
 					<p class="home_intro-item m_0">Voici un aperçu de <a href="" class="link">mes travaux</a> et <a href="" class="link">passe-temps</a>. <br />
 						<a href="" class="link">Mon profil</a> vous intéresse ? N’hésitez pas à me <a class="link">contacter</a></p>
 				</div>
@@ -47,34 +30,34 @@
 			<section class="section section_work-preview">
 				<h2 class="title_h2">Mes derniers projets</h2>
 				<div class="work_previews">
-					<a href="" class="previews_item">
+					<a href="projets/documentaire/" class="previews_item">
 						<picture>
 							<source srcset="assets/img/documentaire.webp" type="image/webp" />
-							<img src="assets/img/documentaire.jpg" alt="Documentaire - On se revoir à Paris" />
+							<img src="assets/img/documentaire.jpg" alt="Documentaire - On se revoir à Paris" loading="lazy" />
 						</picture>
 					</a>
-					<a href="" class="work_previews-item">
+					<a href="projets/teddy/" class="work_previews-item">
 						<picture>
 							<source srcset="assets/img/teddy.webp" type="image/webp" />
-							<img src="assets/img/teddy.jpg" alt="Chaussure de Teddy Riner" />
+							<img src="assets/img/teddy.jpg" alt="Chaussure de Teddy Riner" loading="lazy" />
 						</picture>
 					</a>
-					<a href="" class="work_previews-item">
+					<a href="projets/agir/" class="work_previews-item">
 						<picture>
 							<source srcset="assets/img/agir.webp" type="image/webp" />
-							<img src="assets/img/agir.jpg" alt="Agir Transport" />
+							<img src="assets/img/agir.jpg" alt="Agir Transport" loading="lazy" />
 						</picture>
 					</a>
 				</div>
 				<div class="text_center">
-					<p><a href="https://virtuousquare.com/portfolio" class="link">Tous les projets</a></p>
+					<p><a href="projets" class="link">Tous les projets</a></p>
 				</div>
 			</section>
 	
 			<section class="section section_blog-preview">
 				<h2 class="title_h2">Articles</h2>
 				<div class="article_previews">
-					<a href="" class="article_previews-item">
+					<a href="" class="article_previews-item" data-toolt="image/documentaire.jpg">
 						<strong class="article_previews-date">CSS | 12-07-2024</strong>
 						<span class="article_previews-title">Mes révolutions CSS au fil des anneés</span>
 					</a>
@@ -83,22 +66,23 @@
 						<span class="article_previews-title">Mes révolutions CSS au fil des anneés</span>
 					</a>
 				</div>
+				<div class="text_center">
+					<p><a href="blog" class="link">Tous les articles</a></p>
+				</div>
 			</section>
 
-		</div>
-
-		<footer class="footer">
 			<div class="tips">
 				<i>Vous trouvez que la ligne sous les liens est trop proche du texte ?<br />
 				<strong>Saviez-vous que vous pouvez customiser la décoration des éléments ?</strong></i>
-				<pre class="code">
+				<div class="code_wrapper" data-type="CSS">
+<pre class="code">
 .el {
-	text-decoration-offset: .2em;
+	<span class="bg_light">text-decoration-offset</span>: .2em;
 }</pre>
+				</div>
 			</div>
-			<div class="">Copyright © 2024 Virtuousquare</div>
-			<div><a href="">Dribbble</a> <a href="">Linkedin</a> <a href="">Codepen</a> <a href="">X</a></div>
-		</footer>
+
+		</div>
 
 	</div>
 

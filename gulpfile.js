@@ -142,6 +142,7 @@ function watch() {
     gulp.watch("cv/*.scss", stylesCV);
     gulp.watch("app/js/**/*").on('change', scripts);
     gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("**/*.html").on('change', browserSync.reload);
 }
 
 

@@ -1,4 +1,36 @@
 .footer {
     margin: min(4.16vw,8rem) 0;
     text-align: center;
+
+    &_social {
+
+        &-list {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        &-link {
+            display: block;
+
+            &:hover {
+
+                path,
+                ellipse {
+                    fill: $primary;
+                }
+            }
+        }
+
+        &-icon {
+            width: 30px;
+
+            path,
+            ellipse {
+                fill: $dark;
+            }
+        }
+    }
 }

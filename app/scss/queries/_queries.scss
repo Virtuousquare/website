@@ -37,6 +37,7 @@
 
     @include general_min-md();
     @include home_min-md();
+    @include projets_min-md();
 }
 
 @include media('>=lg') {

@@ -12,6 +12,13 @@
     &_logo {
         display: grid;
         margin: .5em 0;
+
+        &:hover {
+
+            .header_name {
+                color: $primary;
+            }
+        }
     }
 
     &_name {
@@ -102,6 +109,13 @@
                     &:before,
                     &:after {
                         background-color: $primary;
+                    }
+                }
+
+                &-open {
+
+                    + .header_menu-list {
+                        opacity: 1;
                     }
                 }
             }
