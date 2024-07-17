@@ -113,7 +113,7 @@ function initLinks(links) {
 
     links.forEach(link => {
         let href = link.getAttribute('href');
-        if (!href.includes('http')) {
+        if ((!href.includes('http'))&&(!link.getAttribute('target'))) {
             // link.removeEventListener('click',function(){});
             link.addEventListener('click',function(e){
                 e.preventDefault();

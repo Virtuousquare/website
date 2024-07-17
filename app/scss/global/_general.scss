@@ -40,6 +40,20 @@ a {
     }
 }
 
+.btn {
+    background-color: $primary;
+    color: #fff;
+    text-decoration: none;
+    padding: .5em 1em;
+    display: inline-flex;
+    border-radius: 2em;
+    font-weight: 700;
+
+    &:hover {
+        background-color: hsl(from $primary h s 50%);
+    }
+}
+
 // TITLES
 .title {
 
@@ -47,11 +61,12 @@ a {
     &_h2 {
         font-weight: 400;
         font-family: 'Bebas Neue', sans-serif;
+        margin-bottom: .2em;
     }
 
     &_h1 {
         font-size: 5rem;
-        line-height: 1.2em;
+        line-height: 1em;
     }
 
     &_h2 {
@@ -66,6 +81,9 @@ a {
     text-align: center;
 }
 
+.text_grey {
+    color: $grey;
+}
 
 // LAYOUT
 .container {
@@ -129,6 +147,14 @@ a {
         background-color: $light;
         border-radius: .4rem;
     }
+
+    &_inline {
+        background-color: $light;
+        box-shadow: $light 0 0 0 2px, $grey 0 0 0 3px;
+        border-radius: 3px;
+        font-family: monospace;
+        font-style: normal;
+    }
 }
 
 
@@ -150,8 +176,8 @@ a {
     .title {
 
         &_h1 {
-            font-size: 8rem;
-            line-height: 1.2em;
+            font-size: 6.5rem;
+            line-height: 1.1em;
         }
     
         &_h2 {

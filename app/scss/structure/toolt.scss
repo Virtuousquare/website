@@ -2,14 +2,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 10px;
-    height: 10px;
+    width: 1rem;
+    height: 1rem;
     background-color: $primary;
     border-radius: 50%;
     opacity: 0;
     -webkit-transition: transform 0s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
     transition: transform 0s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
-    margin: 1rem 0 0 1rem;
+    margin: 2rem 0 0 2rem;
 
     &_visible {
         opacity: 1;

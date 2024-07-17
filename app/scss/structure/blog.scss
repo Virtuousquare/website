@@ -3,13 +3,36 @@
     > .title_h1,
     > .title_h2,
     > p,
-    > ul {
+    > ul,
+    .blog_infos {
         max-width: 80rem;
         margin-left: auto;
         margin-right: auto;
     }
 
     &_infos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
 
+        ul {
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            gap: 1em;
+        }
+    }
+
+    &_pic {
+        margin: 4rem 0;
+    }
+
+    &_highlight {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        font-style: italic;
     }
 }
