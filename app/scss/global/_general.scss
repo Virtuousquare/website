@@ -43,9 +43,18 @@ a {
 // TITLES
 .title {
 
+    &_h1,
     &_h2 {
         font-weight: 400;
         font-family: 'Bebas Neue', sans-serif;
+    }
+
+    &_h1 {
+        font-size: 5rem;
+        line-height: 1.2em;
+    }
+
+    &_h2 {
         font-size: 3.5rem;
         line-height: 1.2em;
         margin: .5em 0;
@@ -83,9 +92,6 @@ a {
     overflow-x: auto;
     padding: .5rem 0;
     line-height: 1.3em;
-
-    // text-decoration-thickness: 1em;
-    // text-decoration-line: line-through;
 
     &_wrapper {
         text-align: left;
@@ -142,6 +148,11 @@ a {
     }
 
     .title {
+
+        &_h1 {
+            font-size: 8rem;
+            line-height: 1.2em;
+        }
     
         &_h2 {
             font-size: 6rem;

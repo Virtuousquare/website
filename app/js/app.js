@@ -90,14 +90,14 @@ function initToolt() {
         tooltItem.addEventListener('mouseenter', () => changeToolt(val));
         tooltItem.addEventListener('mouseleave', () => emptyToolt(val));
     });
+}
     
-    function changeToolt(val) {
-        document.querySelector(`[data-toolt-id="${val}"]`).classList.add('toolt_item-show')
-    }
-    
-    function emptyToolt(val) {
-        document.querySelector(`[data-toolt-id="${val}"]`).classList.remove('toolt_item-show')
-    }
+function changeToolt(val) {
+    document.querySelector(`[data-toolt-id="${val}"]`).classList.add('toolt_item-show')
+}
+
+function emptyToolt(val) {
+    document.querySelector(`[data-toolt-id="${val}"]`).classList.remove('toolt_item-show')
 }
 
 
@@ -144,7 +144,7 @@ async function getPage(href) {
         href = '/';
     }
 
-    window.history.pushState({"html":'',"pageTitle":'New title'},"", href);
+    window.history.pushState({"html":'',"pageTitle":'Sébastien Plaignaud - ' + href},"", href);
 
     // INIT TOOLT
     initToolt();
