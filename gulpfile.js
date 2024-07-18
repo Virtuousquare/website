@@ -65,7 +65,7 @@ var orderJS = [
     'app/js/plugin/animation.js',
     //'app/js/plugin/slick.min.js',
     // 'app/js/plugin/tiny-slider.js',
-    'app/js/plugin/browsers.js', //Webp
+    // 'app/js/plugin/browsers.js', //Webp
     'app/js/app.js'
 ];
 async function scripts() {

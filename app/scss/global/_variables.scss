@@ -1,10 +1,6 @@
 // TRANSITION
 :root {
 	--gutter: 2rem;
-
-    @include media('>=md') {
-        --gutter: min(4.16vw,8rem);
-    }
 }
 
 $primary: #EF4738;

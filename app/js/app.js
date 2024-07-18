@@ -1,5 +1,6 @@
 // const isTouchDevice = 'ontouchstart' in document.documentElement;
 const dom = 'http://localhost:3000/'
+// const dom = 'https://virtuousquare.com/dev/'
 const assets = dom + 'assets/'
 const partials = dom + 'partials/'
 
@@ -39,6 +40,12 @@ function buildPage(html) {
     // INIT TOOLT
     initToolt();
     parseLinks('a[href]');
+    pageReady();
+}
+
+
+const pageReady = () => {
+    document.body.classList.add('pageReady');
 }
 
 
@@ -96,8 +103,11 @@ function changeToolt(val) {
     document.querySelector(`[data-toolt-id="${val}"]`).classList.add('toolt_item-show')
 }
 
-function emptyToolt(val) {
-    document.querySelector(`[data-toolt-id="${val}"]`).classList.remove('toolt_item-show')
+function emptyToolt() {
+    let tooltItemShowed = document.querySelector('.toolt_item-show');
+    if (tooltItemShowed) {
+        document.querySelector('.toolt_item-show').classList.remove('toolt_item-show')
+    }
 }
 
 
@@ -114,7 +124,27 @@ function initLinks(links) {
     links.forEach(link => {
         let href = link.getAttribute('href');
         if ((!href.includes('http'))&&(!link.getAttribute('target'))) {
-            // link.removeEventListener('click',function(){});
+
+
+
+            let currentUrl = window.location.href;
+            let buildUrl = currentUrl+href;
+
+            if ((link.classList.contains('header_logo')) || (link.classList.contains('header_menu-link'))) {
+                buildUrl = dom + href;
+                if (href === '/') {
+                    buildUrl = dom;
+                }
+            } else if (href.includes('../')) {
+                let splitedHref = href.split('../');
+                href = splitedHref[splitedHref.length];
+                let splitedUrl = currentUrl.replace(dom,'').split('/');
+                buildUrl = dom;
+                for (var i=0;i<splitedHref.length - 1;i++) {
+                    startUrl += '/' + splitedUrl[i];
+                }
+            }
+            link.setAttribute('href',buildUrl);
             link.addEventListener('click',function(e){
                 e.preventDefault();
                 completeHistory();
@@ -133,21 +163,29 @@ function completeHistory() {
 
 async function getPage(href) {
     if (!href.includes('http')) {
-        href = dom+href;
+        href = href;
     }
+
     const response = await fetch(href);
-    const text = await response.text();
-    const html = stringToHTML(text);
-    changeContent(html);
-
-    if (href == dom+'/') {
-        href = '/';
+    
+    // TROUVE LA PAGE
+    if (response.ok) {
+        const text = await response.text();
+        const html = stringToHTML(text);
+        changeContent(html);
+    
+        // if (href == dom+'/') {
+        //     href = '/';
+        // }
+    
+        window.history.pushState({"html":'',"pageTitle":'Sébastien Plaignaud - ' + href},"", href);
+    
+        // INIT TOOLT
+        emptyToolt();
+        initToolt();
+    } else { // NE TROUVE PAS LA PAGE
+        console.log('Pas de page');
     }
-
-    window.history.pushState({"html":'',"pageTitle":'Sébastien Plaignaud - ' + href},"", href);
-
-    // INIT TOOLT
-    initToolt();
 }
 
 

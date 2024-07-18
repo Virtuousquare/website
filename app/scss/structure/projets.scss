@@ -1,6 +1,5 @@
 .projets_previews {
     display: grid;
-    margin: min(4.16vw,8rem);
 
     &-item {
         text-decoration: none;
@@ -35,6 +34,7 @@
 @mixin projets_min-md() {
 
     .projets_previews {
+        margin: var(--gutter);
 
         &-title {
             font-size: 5rem;

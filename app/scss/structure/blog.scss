@@ -21,7 +21,8 @@
             padding: 0;
             margin: 0;
             display: inline-flex;
-            gap: 1em;
+            gap: 0 1em;
+            flex-wrap: wrap;
         }
     }
 

@@ -1,4 +1,20 @@
 // GENERAL
+.noscript {
+    padding: 2rem;
+    position: relative;
+    display: block;
+    z-index: 1;
+    background-color: $primary;
+    text-align: center;
+
+    .link {
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
 ::selection {
 	background-color: $primary;
 	color: #fff;
@@ -20,6 +36,37 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.8rem;
 	line-height: 1.6em;
+
+    &:not(:has(noscript)) {
+
+        &:after {
+            content: 'SP.';
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: min(25vw,50rem);
+            line-height: .8em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $primary;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include transition(all 1s $ease-in-out);
+            @include clip-path(polygon(0 0,100% 0,100% 100%,0 100%));
+        }
+    }
+
+    &.pageReady {
+        
+        &:after {
+            @include transition-delay(.3s);
+            @include translate(0,-20%);
+            @include clip-path(polygon(0 0,100% 0,100% 0,0 0));
+        }
+    }
 }
 
 a {
@@ -86,11 +133,17 @@ a {
 }
 
 // LAYOUT
+#container_general {
+    margin-top: min(4.16vw,8rem);
+    margin-bottom: min(4.16vw,8rem);
+}
+
 .container {
 
     &_main,
     &_text  {
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &_main {
@@ -160,9 +213,9 @@ a {
 
 .tips {
     background-color: #fff;
-    padding: 2rem min(4.16vw,8rem);
+    padding: 2rem var(--gutter);
     border-radius: 2rem;
-    margin: min(4.16vw,8rem) 0;
+    margin: var(--gutter) 0;
 }
 
 

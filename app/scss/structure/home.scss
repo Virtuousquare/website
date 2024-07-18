@@ -14,7 +14,7 @@
 
     &_home {
         display: grid;
-        gap: min(4.16vw,8rem);
+        gap: var(--gutter);
     }
 }
 

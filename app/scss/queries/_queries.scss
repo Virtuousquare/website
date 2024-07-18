@@ -35,6 +35,10 @@
 
 @include media('>=md') {
 
+    :root {
+        --gutter: min(4.16vw,8rem);
+    }
+
     @include general_min-md();
     @include home_min-md();
     @include projets_min-md();
