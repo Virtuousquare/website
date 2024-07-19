@@ -122,20 +122,22 @@ function parseLinks(a) {
 function initLinks(links) {
 
     links.forEach(link => {
+
         let href = link.getAttribute('href');
+        // SI NON LIEN EXTERNE
         if ((!href.includes('http'))&&(!link.getAttribute('target'))) {
-
-
-
+            // PAGE COURANTE
             let currentUrl = window.location.href;
+            // URL PAR DEFAUT
             let buildUrl = currentUrl+href;
-
+            // LIENS DE HEADER PARTICULIERS
             if ((link.classList.contains('header_logo')) || (link.classList.contains('header_menu-link'))) {
                 buildUrl = dom + href;
                 if (href === '/') {
                     buildUrl = dom;
                 }
             } else if (href.includes('../')) {
+                // SI LES LIENS REMONTENT DANS L'ARBO
                 let splitedHref = href.split('../');
                 href = splitedHref[splitedHref.length];
                 let splitedUrl = currentUrl.replace(dom,'').split('/');
@@ -148,7 +150,7 @@ function initLinks(links) {
             link.addEventListener('click',function(e){
                 e.preventDefault();
                 completeHistory();
-                getPage(href)
+                getPage(buildUrl);
             });
         }
     })
@@ -162,23 +164,27 @@ function completeHistory() {
 }
 
 async function getPage(href) {
-    if (!href.includes('http')) {
-        href = href;
+
+    // POUR LES LIENS EXTERNES
+    if (!href.includes(dom)) {
+        return false;
     }
 
+    // RECUPERE LA PAGE
     const response = await fetch(href);
     
-    // TROUVE LA PAGE
-    if (response.ok) {
+    if (response.ok) { // TROUVE LA PAGE
         const text = await response.text();
         const html = stringToHTML(text);
-        changeContent(html);
     
         // if (href == dom+'/') {
         //     href = '/';
         // }
     
+        // CHANGE L'URL
         window.history.pushState({"html":'',"pageTitle":'Sébastien Plaignaud - ' + href},"", href);
+        // CHANGE LE CONTENU DU BLOC PRINCIPAL
+        changeContent(html);
     
         // INIT TOOLT
         emptyToolt();
@@ -200,7 +206,7 @@ function changeContent(html) {
     // LOAD CONTENT
     currentContent.append(newContent);
 
-    // REINIT LINKS
+    // REINIT LINKS DU CONTENU
     parseLinks('#content a[href]');
 }
 

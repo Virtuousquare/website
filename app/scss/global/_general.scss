@@ -37,26 +37,23 @@ body {
 	font-size: 1.8rem;
 	line-height: 1.6em;
 
-    &:not(:has(noscript)) {
-
-        &:after {
-            content: 'SP.';
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: min(25vw,50rem);
-            line-height: .8em;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $primary;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            @include transition(all 1s $ease-in-out);
-            @include clip-path(polygon(0 0,100% 0,100% 100%,0 100%));
-        }
+    &:after {
+        content: 'SP.';
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: min(25vw,50rem);
+        line-height: .8em;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition(all 1s $ease-in-out);
+        @include clip-path(polygon(0 0,100% 0,100% 100%,0 100%));
     }
 
     &.pageReady {
