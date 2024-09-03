@@ -1,81 +1,146 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<title>Sébastien Plaignaud - Projet - Documentaire On se revoit à Paris</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="icon" type="image/png" href="assets/img/fav.png" /> -->
-	<link rel="icon" type="image/x-icon" href="assets/img/fav.ico" />
-	<meta name="description" content="Présentation du documentaire 'On se revoit à Paris'">
-	<meta charset="UTF-8">
+  <head>
+    <title>
+      Sébastien Plaignaud - Projet - Documentaire On se revoit à Paris
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" type="image/png" href="assets/img/fav.png" /> -->
+    <link rel="icon" type="image/x-icon" href="assets/img/fav.ico" />
+    <meta
+      name="description"
+      content="Présentation du documentaire 'On se revoit à Paris'"
+    />
+    <meta charset="UTF-8" />
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
 
-	<link rel="stylesheet" href="../../assets/css/style.css">
-</head>
-<body class="cv">
-	<noscript class="container_main noscript">Javascript est désactivé, c'est votre droit. Malheureusement, ce site ne fonctionne pas sans.<br /><a href="/" class="link">Accueil</a> <a href="projets/" class="link">Projets</a> <a href="blog/" class="link">Blog</a> <a href="mailto:plaignaud.s@gmail.com" class="link">Contact</a></noscript>
-	
-	<div id="container_general" class="container_main">
-	
-		<div class="page page_projets" id="content">
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+  </head>
+  <body class="cv">
+    <noscript class="container_main noscript"
+      >Javascript est désactivé, c'est votre droit. Malheureusement, ce site ne
+      fonctionne pas sans.<br /><a href="/" class="link">Accueil</a>
+      <a href="projets/" class="link">Projets</a>
+      <a href="blog/" class="link">Blog</a>
+      <a href="mailto:plaignaud.s@gmail.com" class="link">Contact</a></noscript
+    >
 
-			<div class="blog">
-				<h1 class="title_h1">Documentaire : On se revoit à Paris</h1>
-				<div class="blog_infos">
-					<ul class="text_grey">
-						<li><strong>Decathlon</strong></li>
-						<li><em>Design</em></li>
-						<li><em>Dév. Front</em></li>
-					</ul>
-					<div>
-						<a href="page/" class="btn projet_btn" target="_blank">Voir la page</a>
-					</div>
-				</div>
-				<h2 class="title_h2">Brief</h2>
-				<p>Dans le cadre des Jeux Olympiques de Paris 2024, un documentaire a été commandé par Decathlon pour promouvoir leut team d'athlète. Ce film était diffusé sur la plateforme de France Télévision peu de temps avant le débutdes Jeux.</p>
-				<p>Afin de le promouvoir, il fallait réaliser une landing qui présente l'esprit du film, les athlètes et réalisateurs.</p>
-				<h2 class="title_h2">Hero</h2>
-				<p>Une des contraintes étaient de reprendre l'affiche du film. J'ai donc animé ces éléments pour les faire apparaître en partant d'une page blanche. Avec les bons easings et délais, cela donne un rendu fluide.</p>
-				
-				<picture class="blog_pic">
-					<source srcset="../../assets/img/docu.webp" type="image/webp" />
-					<img src="../../assets/img/docu.jpg" alt="haut de la page" class="article_img" loading="lazy" />
-				</picture>
-				<h2 class="title_h2">Portraits</h2>
-				<p>Il me semblait pertinent de retrouver la structure de l'affiche pour la présentation des athlètes. A l'inverse du premier bloc, je révélais le texte depuis le dessous des portraits. <br />Cela s'est révélé légèrement plus dur que ce que j'imaginais, merci au clip-path.</p>
-				<picture class="blog_pic">
-					<source srcset="../../assets/img/docu-2.webp" type="image/webp" />
-					<img src="../../assets/img/docu-2.jpg" alt="haut de la page" class="article_img" loading="lazy" />
-				</picture>
-				<h2 class="title_h2">Galerie</h2>
-				<p>En raison du temps serré de production, je voulais une animation simple et efficace pour l'apparition de la galerie. Rien de tel qu'un fade avec un petit délai. Je détaillerai comment le réaliser en quelques lignes avec SASS.</p>
-				<picture class="blog_pic">
-					<source srcset="../../assets/img/docu-3.webp" type="image/webp" />
-					<img src="../../assets/img/docu-3.jpg" alt="haut de la page" class="article_img" loading="lazy" />
-				</picture>
-				
-				<h2 class="title_h2">En résumé</h2>
-				<p>Projet court pour lequel "efficacité" était le maître mot. Réussir à décliner l'affiche à travers la page en y incluant quelques éléments graphiques de la charte de Decathlon.</p>
-				<p>Le design et le développement de la page sur une période ont été réalisés en 1 semaine en incluant les retours.</p>
-				<p class="blog_highlight">
-					Une des particularité de la page est que les animations sont conditionnées aux paramètres du navigateur, certaines personnes ayant des handicaps visuels souhaitant les désactiver. J'ai utilisé le <span class="code_inline">@media (prefers-reduced-motion: no-preference)</span>. Cela pourra faire l'objet d'un article sur l'accessibilité.
-				</p>
-				<p class="text_center">
-					<a href="page/" class="btn projet_btn" target="_blank">Voir la page</a>
-				</p>
-			</div>
+    <div id="container_general" class="container_main">
+      <div class="page page_projets" id="content">
+        <div class="blog">
+          <h1 class="title_h1">Documentaire : On se revoit à Paris</h1>
+          <div class="blog_infos">
+            <ul class="text_grey">
+              <li><strong>Decathlon</strong></li>
+              <li><em>Design</em></li>
+              <li><em>Dév. Front</em></li>
+            </ul>
+            <div>
+              <a href="page/" class="btn projet_btn" target="_blank"
+                >Voir la page</a
+              >
+            </div>
+          </div>
+          <h2 class="title_h2">Brief</h2>
+          <p>
+            Dans le cadre des Jeux Olympiques de Paris 2024, un documentaire a
+            été commandé par Decathlon pour promouvoir leut team d'athlète. Ce
+            film était diffusé sur la plateforme de France Télévision peu de
+            temps avant le débutdes Jeux.
+          </p>
+          <p>
+            Afin de le promouvoir, il fallait réaliser une landing qui présente
+            l'esprit du film, les athlètes et réalisateurs.
+          </p>
+          <h2 class="title_h2">Hero</h2>
+          <p>
+            Une des contraintes étaient de reprendre l'affiche du film. J'ai
+            donc animé ces éléments pour les faire apparaître en partant d'une
+            page blanche. Avec les bons easings et délais, cela donne un rendu
+            fluide.
+          </p>
 
-			<div class="text_center">
-				<a href="projets/" class="link">Retour aux projets</a>
-			</div>
+          <picture class="blog_pic">
+            <source srcset="../../assets/img/docu.webp" type="image/webp" />
+            <img
+              src="../../assets/img/docu.jpg"
+              alt="haut de la page"
+              class="article_img"
+              loading="lazy"
+            />
+          </picture>
+          <h2 class="title_h2">Portraits</h2>
+          <p>
+            Il me semblait pertinent de retrouver la structure de l'affiche pour
+            la présentation des athlètes. A l'inverse du premier bloc, je
+            révélais le texte depuis le dessous des portraits. <br />Cela s'est
+            révélé légèrement plus dur que ce que j'imaginais, merci au
+            clip-path.
+          </p>
+          <picture class="blog_pic">
+            <source srcset="../../assets/img/docu-2.webp" type="image/webp" />
+            <img
+              src="../../assets/img/docu-2.jpg"
+              alt="haut de la page"
+              class="article_img"
+              loading="lazy"
+            />
+          </picture>
+          <h2 class="title_h2">Galerie</h2>
+          <p>
+            En raison du temps serré de production, je voulais une animation
+            simple et efficace pour l'apparition de la galerie. Rien de tel
+            qu'un fade avec un petit délai. Je détaillerai comment le réaliser
+            en quelques lignes avec SASS.
+          </p>
+          <picture class="blog_pic">
+            <source srcset="../../assets/img/docu-3.webp" type="image/webp" />
+            <img
+              src="../../assets/img/docu-3.jpg"
+              alt="haut de la page"
+              class="article_img"
+              loading="lazy"
+            />
+          </picture>
 
-		</div>
+          <h2 class="title_h2">En résumé</h2>
+          <p>
+            Projet court pour lequel "efficacité" était le maître mot. Réussir à
+            décliner l'affiche à travers la page en y incluant quelques éléments
+            graphiques de la charte de Decathlon.
+          </p>
+          <p>
+            Le design et le développement de la page sur une période ont été
+            réalisés en 1 semaine en incluant les retours.
+          </p>
+          <p class="blog_highlight">
+            Une des particularité de la page est que les animations sont
+            conditionnées aux paramètres du navigateur, certaines personnes
+            ayant des handicaps visuels souhaitant les désactiver. J'ai utilisé
+            le
+            <span class="code_inline"
+              >@media (prefers-reduced-motion: no-preference)</span
+            >. Cela pourra faire l'objet d'un article sur l'accessibilité.
+          </p>
+          <p class="text_center">
+            <a href="page/" class="btn projet_btn" target="_blank"
+              >Voir la page</a
+            >
+          </p>
+        </div>
 
-	</div>
+        <div class="text_center">
+          <a href="../projets/" class="link">Retour aux projets</a>
+        </div>
+      </div>
+    </div>
 
-	<script src="../../assets/js/app.js"></script>
-
-</body>
+    <script src="../../assets/js/app.js"></script>
+  </body>
 </html>

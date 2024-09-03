@@ -1,87 +1,114 @@
 .home {
-
-    &_intro {
-
-        &-item {
-            margin: 0;
-            font-weight: 400;
-            font-size: 1.8rem;
-        }
+  &_intro {
+    &-item {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.8rem;
     }
+  }
+}
+
+@mixin titlesStroke($length, $delay) {
+  $duration: calc($length / 1000);
+  stroke-dasharray: #{$length}px;
+  stroke-dashoffset: #{$length}px;
+  @include animation(titles #{$duration}s linear forwards);
+  @include animation-delay(#{$delay}s);
 }
 
 .page {
+  &_home {
+    display: grid;
+    gap: var(--gutter);
 
-    &_home {
-        display: grid;
-        gap: var(--gutter);
+    path {
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
+
+    $start: 1;
+
+    #Vector1 {
+      @include titlesStroke(162, $start);
+    }
+
+    #Vector2 {
+      @include titlesStroke(170, calc($start + 0.2));
+    }
+
+    #Vector3 {
+      @include titlesStroke(567, calc($start + 0.4));
+    }
+
+    @include keyframes(titles) {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    #fr {
+      display: none;
+    }
+  }
 }
 
 .work_previews {
-    display: grid;
-    gap: 4rem;
+  display: grid;
+  gap: 4rem;
 }
 
 .article_previews {
+  display: grid;
+
+  &-item {
+    text-decoration: none;
     display: grid;
+    padding: 2rem 0;
 
-    &-item {
-        text-decoration: none;
-        display: grid;
-        padding: 2rem 0;
-
-        &:not(:last-child) {
-            border-bottom: 1px solid $grey;
-        }
-
-        &:hover {
-            color: $primary;
-        }
+    &:not(:last-child) {
+      border-bottom: 1px solid $grey;
     }
 
-    &-date {
-        color: $grey;
+    &:hover {
+      color: hsl(var(--primary));
     }
+  }
 
-    &-title {
-        font-family: 'Bebas Neue', sans-serif;
-        font-weight: 400;
-        font-size: 2.4rem;
-        line-height: 1.2em;
-    }
+  &-date {
+    color: $grey;
+  }
+
+  &-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.2em;
+  }
 }
-
 
 @mixin home_min-xs() {
-
-    .work_previews {
-        grid-template-columns: repeat(auto-fill, calc(50% - 20px));
-    }
+  .work_previews {
+    grid-template-columns: repeat(auto-fill, calc(50% - 20px));
+  }
 }
 
-
 @mixin home_min-md() {
-
-    .home {
-
-        &_intro {
-    
-            &-item {
-                font-size: 2.2rem;
-            }
-        }
+  .home {
+    &_intro {
+      &-item {
+        font-size: 2.2rem;
+      }
     }
+  }
 
-    .work_previews {
-        grid-template-columns: repeat(auto-fill, calc(33.33% - 80px / 3));
+  .work_previews {
+    grid-template-columns: repeat(auto-fill, calc(33.33% - 80px / 3));
+  }
+
+  .article_previews {
+    &-title {
+      font-size: 3rem;
+      line-height: 1.2em;
     }
-
-    .article_previews {
-
-        &-title {
-            font-size: 3rem;
-            line-height: 1.2em;
-        }
-    }
+  }
 }

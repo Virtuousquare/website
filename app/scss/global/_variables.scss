@@ -1,14 +1,18 @@
+// $primaryHEX: #ef4738;
+// $primary-dark: hsl(from $primaryHEX h s 50%);
+$primaryHSL: 5, 85%, 58%;
+$grey: #999;
+// $dark: #222;
+$darkHSL: 0, 0%, 13%;
+// $light: #eee;
+$lightHSL: 0, 0%, 93%;
+
+$ease-out: cubic-bezier(0, 0.43, 0.31, 0.975);
+$ease-in-out: cubic-bezier(0.77, 0.01, 0.295, 1);
+// https://cubic-bezier.com/
+
 // TRANSITION
 :root {
-	--gutter: 2rem;
+  --gutter: 2rem;
+  --primary: #{$primaryHSL};
 }
-
-$primary: #EF4738;
-$primary-dark: hsl(from $primary h s 50% );
-$grey: #999;
-$dark: #222;
-$light: #eee;
-
-$ease-out: cubic-bezier(0.000, 0.430, 0.310, 0.975);
-$ease-in-out: cubic-bezier(0.770, 0.010, 0.295, 1.000);
-// https://cubic-bezier.com/

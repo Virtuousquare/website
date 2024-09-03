@@ -51,196 +51,208 @@ MEDIA QUERY
 
 */
 
-
 // TRANSITION
 
 @mixin transition($transition) {
-    -webkit-transition: $transition;
-            transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
 }
 
 @mixin transition-delay($transition-delay) {
-    -webkit-transition-delay: $transition-delay;
-            transition-delay: $transition-delay;
+  -webkit-transition-delay: $transition-delay;
+  transition-delay: $transition-delay;
 }
 
 @mixin transition-duration($transition-duration) {
-    -webkit-transition-duration: $transition-duration;
-            transition-duration: $transition-duration;
+  -webkit-transition-duration: $transition-duration;
+  transition-duration: $transition-duration;
 }
 
 @mixin transition-timing-function($transition-easing) {
-    -webkit-transition-timing-function: $transition-easing;
-            transition-timing-function: $transition-easing;
+  -webkit-transition-timing-function: $transition-easing;
+  transition-timing-function: $transition-easing;
 }
-
 
 // ANIMATION
 
 @mixin animation($animation) {
-    -webkit-animation: $animation;
-            animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
 }
 @mixin animation-delay($animation-delay) {
-    -webkit-animation-delay: $animation-delay;
-            animation-delay: $animation-delay;
+  -webkit-animation-delay: $animation-delay;
+  animation-delay: $animation-delay;
 }
 @mixin animation-duration($animation-duration) {
-    -webkit-animation-duration: $animation-duration;
-            animation-duration: $animation-duration;
-}
-    
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content; 
-    }
-    @keyframes #{$name} {
-        @content;
-    } 
+  -webkit-animation-duration: $animation-duration;
+  animation-duration: $animation-duration;
 }
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
 
 //TRANSFORM
 
 @mixin transform($transforms) {
-	-webkit-transform: $transforms;
-	transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
 }
 
-@mixin rotate($deg) { 
-	@include transform(rotate(#{$deg}));
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}));
 }
 
 @mixin scale($scale) {
-	@include transform(scale($scale));
+  @include transform(scale($scale));
 }
 
 @mixin translate($x, $y) {
-	@include transform(translate($x, $y));
+  @include transform(translate($x, $y));
 }
 
 @mixin skew($x, $y) {
-	@include transform(skew(#{$x}, #{$y}));
+  @include transform(skew(#{$x}, #{$y}));
 }
 
-@mixin translateRotate($x,$y,$deg) {
-    -webkit-transform: translate($x,$y) rotate($deg);
-            transform: translate($x,$y) rotate($deg);
+@mixin translateRotate($x, $y, $deg) {
+  -webkit-transform: translate($x, $y) rotate($deg);
+  transform: translate($x, $y) rotate($deg);
 }
 
 @mixin transform-origin($origin) {
-    -webkit-transform-origin: $origin;
-            transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
 }
-
 
 // CLIP-PATH
 
 @mixin clip-path($clip) {
-    -webkit-clip-path: $clip;
-            clip-path: $clip;
+  -webkit-clip-path: $clip;
+  clip-path: $clip;
 }
-
 
 // MASK
 
-@mixin mask($url,$size: contain,$repeat: no-repeat,$position: center) {
-    -webkit-mask-image: $url;
-            mask-image: $url;
-    -webkit-mask-size: $size;
-            mask-size: $size;
-    -webkit-mask-repeat: $repeat;
-            mask-repeat: $repeat;
-    -webkit-mask-position: $position;
-            mask-position: $position;
+@mixin mask($url, $size: contain, $repeat: no-repeat, $position: center) {
+  -webkit-mask-image: $url;
+  mask-image: $url;
+  -webkit-mask-size: $size;
+  mask-size: $size;
+  -webkit-mask-repeat: $repeat;
+  mask-repeat: $repeat;
+  -webkit-mask-position: $position;
+  mask-position: $position;
 }
 
 @mixin mask-image($url) {
-    -webkit-mask-image: $url;
-            mask-image: $url;
+  -webkit-mask-image: $url;
+  mask-image: $url;
 }
 
 @mixin mask-size($size) {
-    -webkit-mask-size: $size;
-            mask-size: $size;
+  -webkit-mask-size: $size;
+  mask-size: $size;
 }
 
 @mixin mask-position($position) {
-    -webkit-mask-position: $position;
-            mask-position: $position;
+  -webkit-mask-position: $position;
+  mask-position: $position;
 }
 
 @mixin mask-repeat($repeat) {
-    -webkit-mask-repeat: $repeat;
-            mask-repeat: $repeat;
+  -webkit-mask-repeat: $repeat;
+  mask-repeat: $repeat;
 }
-
 
 // LAYOUT
 
 @mixin position($position, $args) {
-    @each $o in top right bottom left width height {
-        $i: index($args, $o);
-        @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
-            #{$o}: nth($args, $i + 1);
-        }
+  @each $o in top right bottom left width height {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+      #{$o}: nth($args, $i + 1);
     }
-    position: $position;
+  }
+  position: $position;
 }
 
 // Positioning helpers
-@mixin absolute($args: '') {
-    @include position(absolute, $args);
+@mixin absolute($args: "") {
+  @include position(absolute, $args);
 }
 
-@mixin fixed($args: '') {
-    @include position(fixed, $args);
+@mixin fixed($args: "") {
+  @include position(fixed, $args);
 }
 
-@mixin relative($args: '') {
-    @include position(relative, $args);
+@mixin relative($args: "") {
+  @include position(relative, $args);
 }
-
 
 // FLEX
 
 @mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 // TRIANGLE
 
-@mixin triangle($direction: bottom,$color: black,$width: 20px,$height: 10px) {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent;
+@mixin triangle(
+  $direction: bottom,
+  $color: black,
+  $width: 20px,
+  $height: 10px
+) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
 
-    @if $direction == right {
-        border-width: calc($height / 2) 0 calc($height / 2) $width;
-        border-left-color: $color;
-    } @else if $direction == bottom {
-        border-width: $height calc($width / 2) 0 calc($width / 2);
-        border-top-color: $color;
-    } @else if $direction == left {
-        border-width: calc($height / 2) $width calc($height / 2) 0;
-        border-right-color: $color;
-    } @else if $direction == top {
-        border-width: 0 calc($width / 2) $height calc($width / 2);
-        border-bottom-color: $color;
-    }
+  @if $direction == right {
+    border-width: calc($height / 2) 0 calc($height / 2) $width;
+    border-left-color: $color;
+  } @else if $direction == bottom {
+    border-width: $height calc($width / 2) 0 calc($width / 2);
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-width: calc($height / 2) $width calc($height / 2) 0;
+    border-right-color: $color;
+  } @else if $direction == top {
+    border-width: 0 calc($width / 2) $height calc($width / 2);
+    border-bottom-color: $color;
+  }
 }
-
 
 // PLACEHOLDERS
 
 @mixin input-placeholder {
-    &.placeholder { @content; }
-    &:-moz-placeholder { @content; }
-    &::-moz-placeholder { @content; }
-    &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; }
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
 }
+
+// FUNCTION COLORS ALPHA
+// @function hsl-alpha($hsl-list, $alpha: 1) {
+//   @return hsla(nth($hsl-list, 1), nth($hsl-list, 2), nth($hsl-list, 3), $alpha);
+// }

@@ -1,52 +1,54 @@
 .toolt {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1rem;
-    height: 1rem;
-    background-color: $primary;
-    border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: transform 0s $ease-out, width 0.2s $ease-out,
+    height 0.2s $ease-out, margin 0.2s $ease-out;
+  transition: transform 0s $ease-out, width 0.2s $ease-out,
+    height 0.2s $ease-out, margin 0.2s $ease-out;
+  margin: 2rem 0 0 2rem;
+
+  &_visible {
+    opacity: 1;
+    -webkit-transition: transform 0.8s $ease-out, width 0.2s $ease-out,
+      height 0.2s $ease-out, margin 0.2s $ease-out;
+    transition: transform 0.8s $ease-out, width 0.2s $ease-out,
+      height 0.2s $ease-out, margin 0.2s $ease-out;
+  }
+
+  &_item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
     opacity: 0;
-    -webkit-transition: transform 0s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
-    transition: transform 0s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
-    margin: 2rem 0 0 2rem;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition(all 0.3s $ease-out);
 
-    &_visible {
-        opacity: 1;
-        -webkit-transition: transform .8s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
-        transition: transform .8s $ease-out, width .2s $ease-out, height .2s $ease-out, margin .2s $ease-out;
+    &-show {
+      opacity: 1;
     }
+  }
 
-    &_item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        @include translate(-50%,-50%);
-        opacity: 0;
-        width: 100%;
-        object-fit: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include transition(all .3s $ease-out);
-
-        &-show {
-            opacity: 1;
-        }
-    }
-
-    &:has(img.toolt_item-show){
-        background-color: $light;
-        width: 40rem;
-        height: 3rem;
-        aspect-ratio: 1/1;
-        border-radius: 0;
-        margin: -5rem 0 0 -20rem;
-        cursor: none;
-    }
+  &:has(img.toolt_item-show) {
+    background-color: var(--light);
+    width: 40rem;
+    height: 3rem;
+    aspect-ratio: 1/1;
+    border-radius: 0;
+    margin: -5rem 0 0 -20rem;
+    cursor: none;
+  }
 }
 
-
 @mixin toolt_min-md() {
-    
 }
