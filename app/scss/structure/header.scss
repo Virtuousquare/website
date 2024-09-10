@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   display: flex;
-  background-color: rgba(var(--light), 0.9);
+  background-color: $scheme-ld;
   backdrop-filter: blur(3px);
 
   a {
@@ -12,10 +12,12 @@
   &_logo {
     display: grid;
     margin: 0.5em 0;
+    --lightA: 1;
+    --darkA: 1;
 
     &:hover {
       .header_name {
-        color: hsl(var(--primary));
+        color: $primary;
       }
     }
   }
@@ -61,16 +63,16 @@
       &-current {
         &:after {
           border-radius: 2px;
-          background-color: hsl(var(--primary));
+          background-color: $primary;
         }
       }
 
       &:hover {
-        color: hsl(var(--primary));
+        color: $primary;
 
         &:after {
           width: 100%;
-          background-color: hsl(var(--primary));
+          background-color: $primary;
         }
       }
     }
@@ -96,7 +98,7 @@
           left: 50%;
           width: 40%;
           height: 0.4rem;
-          background-color: var(--dark);
+          background-color: $scheme-dl;
         }
 
         &:before {
@@ -110,7 +112,7 @@
         &:hover {
           &:before,
           &:after {
-            background-color: hsl(var(--primary));
+            background-color: $primary;
           }
         }
 
@@ -125,7 +127,7 @@
         position: absolute;
         left: 0;
         top: 100%;
-        background-color: var(--light);
+        background-color: $scheme-ld;
         z-index: 1;
         padding: 0;
         margin: 0;

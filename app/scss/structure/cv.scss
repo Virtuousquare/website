@@ -2,7 +2,7 @@
   // font-family: 'Inter', sans-serif;
   font-size: 1.8rem;
   line-height: 1.5em;
-  color: hsl(var(--dark));
+  color: $scheme-dl;
 }
 
 .cv_container {
@@ -15,7 +15,8 @@
   top: 0;
   left: 0;
   text-transform: uppercase;
-  color: hsla(var(--primary), 0.1);
+  color: $primary;
+  --priA: 0.1;
   font-weight: 700;
   font-size: 18dvh;
   line-height: 1.1em;
@@ -48,10 +49,11 @@
     grid-area: infos;
 
     &-link {
-      fill: hsl(var(--dark));
+      fill: $scheme-dl;
       &:hover {
         path {
-          fill: hsla(var(--primary), 0.5);
+          fill: $primary;
+          --priA: 0.5;
         }
       }
     }
@@ -67,7 +69,9 @@
     margin-top: 4rem;
 
     &:not(:first-of-type) {
-      border-top: 2px solid hsla(var(--dark), 0.1);
+      border-top: 2px solid $scheme-dl;
+      --darkA: 0.1;
+      --lightA: 0.2;
       padding-top: 3rem;
     }
   }
@@ -90,18 +94,21 @@
 
   &_refs,
   &_agency {
-    color: hsla(var(--dark), 0.5);
+    color: $scheme-dl;
+    --darkA: 0.7;
+    --lightA: 0.5;
   }
 
   &_refs a {
-    color: hsl(var(--dark));
+    color: $scheme-dl;
     padding: 0 0.2em;
     text-decoration: none;
-    box-shadow: hsla(var(--primary), 0.5) 0 -0.3em 0 inset;
+    box-shadow: $primary 0 -0.3em 0 inset;
+    --priA: 0.5;
     @include transition(all 0.1s $ease-in-out);
 
     &:hover {
-      box-shadow: hsla(var(--primary), 0.5) 0 -1.2em 0 inset;
+      box-shadow: $primary 0 -1.2em 0 inset;
     }
   }
 }
@@ -125,7 +132,7 @@
       margin: 0.8em 0 1.3em;
       width: 5rem;
       height: 2px;
-      background-color: hsl(var(--dark));
+      background-color: $scheme-dl;
     }
   }
 

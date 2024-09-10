@@ -14,26 +14,14 @@
   }
 }
 
-:root {
-  --dark: #{$darkHSL};
-  --light: #{$lightHSL};
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --dark: #{$lightHSL};
-    --light: #{$darkHSL};
-  }
-}
-
 ::selection {
-  background-color: hsl(var(--primary));
-  color: hsl(var(--light));
+  background-color: $primary;
+  color: $scheme-dl;
 }
 
 ::-moz-selection {
-  background-color: hsl(var(--primary));
-  color: hsl(var(--light));
+  background-color: $primary;
+  color: $scheme-dl;
 }
 
 html {
@@ -41,8 +29,8 @@ html {
 }
 
 body {
-  background-color: hsl(var(--light));
-  color: hsl(var(--dark));
+  background-color: $scheme-ld;
+  color: $scheme-dl;
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 1.8rem;
@@ -58,7 +46,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsl(var(--primary));
+    background-color: $primary;
     color: #fff;
     display: flex;
     align-items: center;
@@ -77,11 +65,11 @@ body {
 }
 
 a {
-  color: var(--dark);
+  color: $scheme-dl;
   text-underline-offset: 0.12em;
 
   &:focus {
-    outline: 3px dashed hsl(var(--primary));
+    outline: 3px dashed $primary;
     outline-offset: 5px;
   }
 }
@@ -90,12 +78,12 @@ a {
   font-weight: 700;
 
   &:hover {
-    color: hsl(var(--primary));
+    color: $primary;
   }
 }
 
 .btn {
-  background-color: hsl(var(--primary));
+  background-color: $primary;
   color: #fff;
   text-decoration: none;
   padding: 0.5em 1em;
@@ -104,7 +92,9 @@ a {
   font-weight: 700;
 
   &:hover {
-    background-color: hsl(from hsl(var(--primary)) h s 50%);
+    --priA: 0.5;
+    background-color: $primary;
+    // background-color: hsl(from hsl(var(--primary)) h s 50%);
   }
 }
 
@@ -174,14 +164,14 @@ a {
 
     &[data-type] {
       position: relative;
-      border-left: 0.4rem solid hsl(var(--primary));
+      border-left: 0.4rem solid $primary;
 
       &:before {
         content: attr(data-type);
         position: absolute;
         top: 0.4rem;
         right: calc(100% - 0.8rem);
-        color: hsl(var(--primary));
+        color: $primary;
         @include transform(rotate(-90deg) translate(-100%, 0));
         @include transform-origin(top left);
         line-height: 1em;
@@ -200,13 +190,13 @@ a {
   }
 
   .bg_light {
-    background-color: var(--light);
+    background-color: $scheme-dl;
     border-radius: 0.4rem;
   }
 
   &_inline {
-    background-color: var(--light);
-    box-shadow: var(--light) 0 0 0 2px, $grey 0 0 0 3px;
+    background-color: $scheme-ld;
+    box-shadow: $scheme-ld 0 0 0 2px, $grey 0 0 0 3px;
     border-radius: 3px;
     font-family: monospace;
     font-style: normal;
@@ -214,8 +204,8 @@ a {
 }
 
 .tips {
-  background-color: hsl(var(--dark));
-  color: hsl(var(--light));
+  background-color: $scheme-dl;
+  color: $scheme-ld;
   padding: 2rem var(--gutter);
   border-radius: 2rem;
   margin: var(--gutter) 0;

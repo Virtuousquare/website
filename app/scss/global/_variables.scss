@@ -1,11 +1,11 @@
-// $primaryHEX: #ef4738;
-// $primary-dark: hsl(from $primaryHEX h s 50%);
-$primaryHSL: 5, 85%, 58%;
+$light: hsla(var(--lightH), var(--lightS), var(--lightL), var(--lightA));
+$dark: hsla(var(--darkH), var(--darkS), var(--darkL), var(--darkA));
+$grey: hsla(var(--greyH), var(--greyS), var(--greyL), var(--greyA));
+$primary: hsla(var(--priH), var(--priS), var(--priL), var(--priA));
+$scheme-ld: light-dark($light, $dark);
+$scheme-dl: light-dark($dark, $light);
+
 $grey: #999;
-// $dark: #222;
-$darkHSL: 0, 0%, 13%;
-// $light: #eee;
-$lightHSL: 0, 0%, 93%;
 
 $ease-out: cubic-bezier(0, 0.43, 0.31, 0.975);
 $ease-in-out: cubic-bezier(0.77, 0.01, 0.295, 1);
@@ -14,5 +14,26 @@ $ease-in-out: cubic-bezier(0.77, 0.01, 0.295, 1);
 // TRANSITION
 :root {
   --gutter: 2rem;
-  --primary: #{$primaryHSL};
+
+  --lightH: 0;
+  --lightS: 0%;
+  --lightL: 93%;
+  --lightA: 1;
+
+  --darkH: 0;
+  --darkS: 0%;
+  --darkL: 10%;
+  --darkA: 1;
+
+  --greyH: 0;
+  --greyS: 0%;
+  --greyL: 10%;
+  --greyA: 1;
+
+  --priH: 5;
+  --priS: 85%;
+  --priL: 58%;
+  --priA: 1;
+
+  color-scheme: light dark;
 }

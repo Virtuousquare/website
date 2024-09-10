@@ -17,7 +17,7 @@
       &:hover {
         path,
         ellipse {
-          fill: hsl(var(--primary));
+          fill: $primary;
         }
       }
     }
@@ -27,7 +27,7 @@
 
       path,
       ellipse {
-        fill: hsl(var(--dark));
+        fill: $scheme-dl;
       }
     }
   }

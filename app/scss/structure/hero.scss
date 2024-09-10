@@ -1,7 +1,7 @@
 .hero {
   &_big {
     display: block;
-    color: hsl(var(--primary));
+    color: $primary;
     font-family: "Bebas Neue", sans-serif;
     text-align: center;
     font-size: min(25vw, 500px);
