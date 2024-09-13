@@ -3,6 +3,7 @@
   top: 0;
   display: flex;
   background-color: $scheme-ld;
+  --darkA: 0.8;
   backdrop-filter: blur(3px);
 
   a {

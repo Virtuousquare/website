@@ -67,10 +67,15 @@ body {
 a {
   color: $scheme-dl;
   text-underline-offset: 0.12em;
+  @include transition(all 0.1s $ease-in-out);
 
-  &:focus {
-    outline: 3px dashed $primary;
-    outline-offset: 5px;
+  &:hover {
+    text-underline-offset: 0.3em;
+  }
+
+  &:focus,
+  &:active {
+    text-decoration-style: dashed;
   }
 }
 
@@ -90,12 +95,24 @@ a {
   display: inline-flex;
   border-radius: 2em;
   font-weight: 700;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 
-  &:hover {
-    --priA: 0.5;
-    background-color: $primary;
-    // background-color: hsl(from hsl(var(--primary)) h s 50%);
+  &:hover,
+  &:focus {
+    outline: 2px solid $primary;
   }
+
+  &:focus,
+  &:active {
+    outline-style: dashed;
+  }
+
+  // &:hover {
+  //   --priA: 0.9;
+  //   background-color: $primary;
+  //   // background-color: hsl(from hsl(var(--primary)) h s 50%);
+  // }
 }
 
 // TITLES
@@ -156,11 +173,14 @@ a {
   overflow-x: auto;
   padding: 0.5rem 0;
   line-height: 1.3em;
+  margin: 0;
 
   &_wrapper {
     text-align: left;
     font-size: 0.8em;
     padding-left: 1.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 
     &[data-type] {
       position: relative;
@@ -190,13 +210,13 @@ a {
   }
 
   .bg_light {
-    background-color: $scheme-dl;
+    background-color: light-dark(#eee, rgba(#fff, 0.2));
     border-radius: 0.4rem;
   }
 
   &_inline {
-    background-color: $scheme-ld;
-    box-shadow: $scheme-ld 0 0 0 2px, $grey 0 0 0 3px;
+    background-color: $grey;
+    box-shadow: $grey 0 0 0 2px, $grey 0 0 0 3px;
     border-radius: 3px;
     font-family: monospace;
     font-style: normal;
@@ -204,8 +224,8 @@ a {
 }
 
 .tips {
-  background-color: $scheme-dl;
-  color: $scheme-ld;
+  background-color: light-dark(#fff, rgba(#fff, 0.1));
+  color: $scheme-dl;
   padding: 2rem var(--gutter);
   border-radius: 2rem;
   margin: var(--gutter) 0;

@@ -1,5 +1,5 @@
 // const isTouchDevice = 'ontouchstart' in document.documentElement;
-const dom = "http://localhost:3000/";
+const dom = "http://localhost:3002/";
 // const dom = 'https://virtuousquare.com/dev/'
 const assets = dom + "assets/";
 const partials = dom + "partials/";

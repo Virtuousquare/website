@@ -65,16 +65,22 @@
             page blanche. Avec les bons easings et délais, cela donne un rendu
             fluide.
           </p>
-
-          <picture class="blog_pic">
-            <source srcset="../../assets/img/docu.webp" type="image/webp" />
-            <img
-              src="../../assets/img/docu.jpg"
-              alt="haut de la page"
-              class="article_img"
-              loading="lazy"
-            />
-          </picture>
+          <div class="blog_video">
+            <iframe
+              src="https://player.vimeo.com/video/1009113179?badge=0&amp;background=1&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              title="DECATHLON - Documentaire - On se revoit à Paris"
+            ></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
           <h2 class="title_h2">Portraits</h2>
           <p>
             Il me semblait pertinent de retrouver la structure de l'affiche pour
@@ -83,15 +89,33 @@
             révélé légèrement plus dur que ce que j'imaginais, merci au
             clip-path.
           </p>
-          <picture class="blog_pic">
-            <source srcset="../../assets/img/docu-2.webp" type="image/webp" />
-            <img
-              src="../../assets/img/docu-2.jpg"
-              alt="haut de la page"
-              class="article_img"
-              loading="lazy"
-            />
-          </picture>
+          <div class="blog_video">
+            <iframe
+              src="https://player.vimeo.com/video/1009163877?badge=0&amp;background=1&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              title="DECATHLON - Documentaire - On se revoit à Paris - Google Chrome 2024-09-13 14-16-11"
+            ></iframe>
+          </div>
+          <div class="blog_bloc tips">
+            <p>La petite astuce pour faire des points dans le fond :</p>
+            <div class="code_wrapper" data-type="CSS">
+              <pre class="code">
+.teaser {
+    background-image: radial-gradient($purple 2px, transparent 2px);
+    background-size: var(--spacing) var(--spacing);
+    background-position: calc(50% + 2px) top;
+}</pre
+              >
+            </div>
+          </div>
           <h2 class="title_h2">Galerie</h2>
           <p>
             En raison du temps serré de production, je voulais une animation
@@ -99,16 +123,21 @@
             qu'un fade avec un petit délai. Je détaillerai comment le réaliser
             en quelques lignes avec SASS.
           </p>
-          <picture class="blog_pic">
-            <source srcset="../../assets/img/docu-3.webp" type="image/webp" />
-            <img
-              src="../../assets/img/docu-3.jpg"
-              alt="haut de la page"
-              class="article_img"
-              loading="lazy"
-            />
-          </picture>
-
+          <div class="blog_video">
+            <iframe
+              src="https://player.vimeo.com/video/1009171970?badge=0&amp;background=1&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              title="DECATHLON - Documentaire - On se revoit à Paris - Google Chrome 2024-09-13 14-19-12"
+            ></iframe>
+          </div>
           <h2 class="title_h2">En résumé</h2>
           <p>
             Projet court pour lequel "efficacité" était le maître mot. Réussir à
@@ -119,15 +148,17 @@
             Le design et le développement de la page sur une période ont été
             réalisés en 1 semaine en incluant les retours.
           </p>
-          <p class="blog_highlight">
-            Une des particularité de la page est que les animations sont
-            conditionnées aux paramètres du navigateur, certaines personnes
-            ayant des handicaps visuels souhaitant les désactiver. J'ai utilisé
-            le
-            <span class="code_inline"
-              >@media (prefers-reduced-motion: no-preference)</span
-            >. Cela pourra faire l'objet d'un article sur l'accessibilité.
-          </p>
+          <div class="blog_bloc tips">
+            <p>
+              Une des particularité de la page est que les animations sont
+              conditionnées aux paramètres du navigateur, certaines personnes
+              ayant des handicaps visuels souhaitant les désactiver. J'ai
+              utilisé le
+              <span class="code_inline"
+                >@media (prefers-reduced-motion: no-preference)</span
+              >. Cela pourra faire l'objet d'un article sur l'accessibilité.
+            </p>
+          </div>
           <p class="text_center">
             <a href="page/" class="btn projet_btn" target="_blank"
               >Voir la page</a

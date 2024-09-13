@@ -251,8 +251,3 @@ MEDIA QUERY
     @content;
   }
 }
-
-// FUNCTION COLORS ALPHA
-// @function hsl-alpha($hsl-list, $alpha: 1) {
-//   @return hsla(nth($hsl-list, 1), nth($hsl-list, 2), nth($hsl-list, 3), $alpha);
-// }
